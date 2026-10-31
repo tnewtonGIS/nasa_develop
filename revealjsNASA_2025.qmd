@@ -1,0 +1,696 @@
+---
+title: "NASA Mentorship"
+editor: visual
+author: Travis Newton
+date: today
+format: 
+  revealjs:
+    footer: "NASA 2025" 
+    transition: fade
+    transition-speed: slow
+    title-slide-attributes: 
+      data-background-image: develop.png
+      data-background-size: 10%
+      data-background-opacity: 25%
+      data-background-position: center bottom 15%
+    smaller: true
+    scrollable: false
+    logo: develop.png
+    slide-number: true
+    chalkboard: true
+---
+
+```{r echo=FALSE}
+library(tidyverse)
+library(here)
+library(janitor)
+```
+
+```{r}
+#| echo: false
+#new slides start at ## level
+```
+
+## House keeeping {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+-   Wait tell end of slide to ask questions (not presentation)
+    -   One presentation
+    -   Will stop on slide-"N" when close to time, pick up again next round
+-   Reach out with questions
+-   Masters not a PhD
+    -   I'm approachable
+-   Currently activated with FEMA at GA JFO
+    -   If over 3min late, send me a text... *`Are you coming today?`*
+
+## Agenda {.r-fit-text .smaller background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+**NASA DEVELOP**
+
+-   Meeting and discussions 3 x 45min-1hr sessions
+
+<break>
+
+-   Section 01 *`pg.1-11`*
+    -   Introductions, lessons learned from DEVELOP
+-   Section 02 *`pg.12-21`*
+    -   Workplace experience
+-   Section 03 *`pg.22-28`*
+    -   Getting a job
+
+::: notes
+Speaker notes go here + tell a joke.
+:::
+
+## About Me {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+**From**
+
+-   Pacific Northwest (PNW)
+-   Resettled East Coast (NC, VA, GA)
+-   DEVELOP'R Summer 2020 (covid remote)
+
+<break>
+
+**Jobs**
+
+:::::: columns
+::: {.column width="30%"}
+-   [Full Time]{.underline}
+    -   U.S.Army
+    -   Esri
+    -   DOD
+:::
+
+::: {.column width="40%"}
+-   [Internship]{.underline}
+    -   Global Trek Adventures
+    -   DEVELOP
+    -   Esri
+:::
+
+::: {.column width="30%"}
+-   [Seasonal / On-Demand]{.underline}
+    -   NPS
+    -   USFS
+    -   FEMA Reserves
+:::
+::::::
+
+![](nps.jpg){.absolute top="10%" right="0%" width="20%"}
+
+## Location Employment {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+```{r}
+library("sf")
+library("ggrepel") 
+library("ggspatial")
+library("rnaturalearth") 
+library("rnaturalearthdata")
+library("readODS")
+library("tigris")
+
+```
+
+```{r}
+# world <- ne_countries(scale = "medium", returnclass = "sf")
+# class(world)
+# world_points <- cbind(world, st_coordinates(st_centroid(world$geometry)))
+# us_states <- tigris::states(cb = TRUE, class="sf")
+```
+
+```{r}
+# 
+# world_names <- world %>% select(sovereignt, admin)
+# namesDF <- st_drop_geometry(world_names)
+# write_ods(namesDF, "job_location_names.ods")
+```
+
+`{# {r} # ggplot(data = us_states) + #     geom_sf() + #     xlab("Longitude") +  #     ylab("Latitude") + #     ggtitle(label = "USA map",  #             subtitle = paste0("(", length(unique(us_states$NAME)), " countries)"))`
+
+```{r}
+# ggplot(data = world) +
+#     geom_sf() +
+#     xlab("Longitude") + 
+#     ylab("Latitude") +
+#     ggtitle(label = "World map", 
+#             subtitle = paste0("(", length(unique(world$NAME)), " countries)"))
+
+```
+
+```{r}
+
+
+
+# ggplot(data = world) + 
+#   geom_sf(fill= "antiquewhite") + 
+#   geom_text(data= world_points,
+#             aes(x=X, y=Y, label=name), 
+#             color = "darkblue", 
+#             fontface = "bold", 
+#             check_overlap = FALSE) + 
+#   annotate(geom = "text", 
+#            x = -90, y = 26, 
+#            label = "Gulf of Mexico", 
+#            fontface = "italic",
+#            color = "grey22", size = 6) + 
+#   annotation_scale(location = "bl", width_hint = 0.5) + 
+#   annotation_north_arrow(location = "bl", 
+#                          which_north = "true", 
+#                          pad_x = unit(0.5, "in"), 
+#                          pad_y = unit(0.5, "in"), 
+#                          style = north_arrow_fancy_orienteering) + 
+#   coord_sf(xlim = c(-102.15, -74.12), 
+#            ylim = c(7.65, 33.97), 
+#            expand = FALSE) + 
+#   xlab("Longitude") + 
+#   ylab("Latitude") + 
+#   ggtitle("Map of the Gulf of Mexico and the Caribbean Sea") + 
+#   theme(panel.grid.major = element_line(color = gray(.5), 
+#                                         linetype = "dashed", 
+#                                         size = 0.5), 
+#         panel.background = element_rect(fill = "aliceblue"))
+
+```
+
+## About You {#about-you background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+::::: columns
+::: {.column width="75%"}
+Tell me about yourself
+
+1.  Degree?
+
+2.  Where you from (country, state, city)?
+
+3.  Do you have any special skills (eagle scout, baseball player, etc)
+
+4.  Describe your project?
+
+5.  What are your ambitions after DEVELOP?
+
+6.  How will DEVELOP get you where you need to go?
+:::
+
+::: {.column width="25%"}
+![](NASA_logo.png){fig-align="center" width="519"}
+
+![](images/eagle.gif)
+:::
+:::::
+
+::: callout-note
+## Elevator Pitch
+
+These questions can help you with an elevator pitch for your time at NASA
+:::
+
+## My DEVELOP {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+-   4man team (computer science, biologist, gis, env science)
+-   Week 1-2: Divide into occasional learning groups (Esri, QGIS, R, etc)
+-   Week 3-10: Showcase Remote Sensing for Eastern Band of Cherokee Indians
+    -   settled on hemlock tree degradation (woolly adelgid)
+        -   Esri ArcPro
+        -   Required virtual machine login (except me)
+
+::::: columns
+::: {.column width="60%"}
+-   Time Spent
+    -   2-3wk getting a project
+    -   2-3wk gathering EOS
+    -   2-3wk model builder
+    -   2-3wk project correction
+    -   1-2wk finalizing (video, poster, docs, etc)
+:::
+
+::: {.column .callout-warning width="40%" title="Warning R-Tips"}
+-   Team work is key. Just because one person is in a "GIS" degree, does not mean they take on the bulk of work.
+:::
+:::::
+
+## My DEVELOP {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+In STEM, its easy to go with what you know.....academic studies.
+
+::::: columns
+::: {.column width="75%"}
+-   Issues
+    -   Choose Model Builder as initial push to circumvent the code review
+        -   *`Use code 100x faster`*
+    -   Tried to go to big (10-20yr study)
+    -   Wasted time on projections, datum, study area
+    -   Did not properly identify objective: Evergreen loss vs Hemlock detection
+    -   A customers who gets a free gift bag care not what they get
+        -   *`Leads to ambitiousness, ambiguous, and/or lackadaisical objectives`*
+:::
+
+::: {.column width="25%"}
+![](images/clipboard-3578814888.png)
+:::
+:::::
+
+## My DEVELOP - Do over {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+Ask.....What spatial projects can you not accomplish right now due to supervisor disinterest or budget?
+
+-   R/SF or Python/Esri (agency/country dependent)
+-   Single focus (water, tree, landslide, etc)....`Be Generic`
+-   Use a GIT repository
+-   When in doubt (google, stackoverflow, NASA library)
+
+**Design**
+
+::::: columns
+::: {.column width="50%" align="center"}
+[R]{.underline}
+:::
+
+::: {.column width="50%" align="center"}
+[Esri]{.underline}
+:::
+:::::
+
+::::: columns
+::: {.column width="50%"}
+-   Code (r script)
+
+-   Showcase Results (shiny app)
+
+-   Presentations (quartro = powerpoint and revealJS)
+
+-   Reports: (quartro = microsoft word)
+
+-   Poster: (markdown = posterdown)
+:::
+
+::: {.column width="50%"}
+-   Code (vs script, spyder, juypter)
+
+-   Showcase Results (eb or hub)
+
+-   Presentations (powerpoint)
+
+-   Reports: (microsoft word)
+
+-   Poster: (powerpoint, adobe)
+:::
+:::::
+
+::: footer
+:::
+
+![](Rpy.png){.absolute top="30%" right="0%" width="25%," height="20%"}
+
+## My DEVELOP - R {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+-   Divide and Conquer
+    -   Data (tidyverse) = everyone
+    -   Reports (quarto/markdown)
+    -   Plots (ggplot2 and plotly)
+    -   Maps (sf, leaflet)
+    -   Shiny App (bslib, html, css)
+
+::: callout-tip
+## Cartography
+
+Don't worry about *cartography*. DEVELOP conducts studies of natural/human science phenomenon using EOS. Simple maps with associated graphs and tables or an interactive app are better.
+:::
+
+![](R_logo.png){.absolute top="30%" right="0%" width="25%," height="20%"}
+
+## Break {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+Section 02
+
+Next:
+
+-   From the Field: From academia to industry GIS
+
+## Networking {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+-   Why is it important?
+    -   references
+    -   dial a friend for help
+    -   job opportunities
+-   Where to network
+    -   Linkden (Only field related)
+    -   GIS related groups (Mappy Hours)
+    -   Conferences
+
+::: callout-tip
+## Conferences
+
+Can you build a portfolio website with QR code and add it to a paper business card?
+:::
+
+![](chess.jpg){.absolute top="10%" right="0%" width="40%"}
+
+::: footer
+:::
+
+::: notes
+Contacted a mentor for R/landslide/hydrology question
+:::
+
+## Overcoming Obstacles {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+::::: columns
+::: {.column width="85%"}
+GIS and Remote Sensing
+
+-   Each job has varied requirements
+    -   Esri (90%)
+        -   Primary: Python, Arcade, HTML, CSS, Bootstrap5, JS
+        -   DOD, DOS, DOI, USDA, State, City, County
+    -   Open Source (10%)
+        -   Research and overseas agencies
+        -   NASA, ORNL, USAID, Academia, Healthcare
+            -   R, SAS, Matlab, QGIS, GrassGIS
+-   Project Hours
+    -   Projects always req more hours then given
+    -   Eat the hours your first year or two
+    -   Cook the books
+:::
+
+::: {.column width="15%"}
+![](images/betty.jpg)
+:::
+:::::
+
+## Strength and Weakness {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+-   What are you weak at?
+-   Will studying your weakness improve job or research?
+-   Create a list of shortcomings and then prioritize.
+    -   Bookmark training (Esri Tng Portal, Udemy, Linkden Learning, etc)
+
+![](images/boy1.jpg){fig-align="right" width="50%"}
+
+## Lessons Learned {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+:::::: columns
+::: {.column width="40%"}
+1.  QA/QC Everything
+    -   GEMA road networks
+        -   Crawl -\> Walk -\> Run
+        -   Code -\> Visualize -\> Manual Calc
+2.  Once code works; **Optimize** (functions, dictionary, loops, etc)
+:::
+
+::: {.column width="5%"}
+<!--# GAP SETTING -->
+:::
+
+::: {.column width="55%"}
+3.  Not all divisions play well (IT - GIS - EM - Police - Fire - NR)
+4.  What a customer wants pro-bono vs paying
+    -   What customer bought or were sold
+        -   Disconnect between Sales Department and Techinician
+    -   Examples
+        -   Mosquito App
+        -   Health fraud
+:::
+::::::
+
+![](images/disconnet.jpg){fig-align="center" width="50%"}
+
+## Lessons Learned {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+**Organized browser toolbars**
+
+-   Individually personalized to meet your field
+
+-   Try to clean them up once a month
+
+-   Sub-folders are your friend
+
+![](images/tool1.png)
+
+::::: columns
+::: {.callout-tip .column width="50%"}
+## Favorites toolbar
+
+Once employed, 90% of work done from employee computer. Export toolbar to GITHUB and clone to personal computer(s).
+:::
+
+::: {.column width="40%"}
+![](images/tool2.png){fig-align="right" width="70%"}
+:::
+:::::
+
+## Impostor Syndrome {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+::::: columns
+::: {.column width="70%"}
+-   Never goes away
+    -   Extra hours, weekend makeup, etc
+    -   The better you get -\> harder the project -\> more projects -\> reduced hours -\> repeat
+-   Leverage your teammates, internal resources
+    -   Database of case work, code, bug errors, etc
+-   Tech burnout is real
+    -   Average life at google (1.9), amazon (1.8), apple (1.8)
+-   Change career path or take a sabbatical
+:::
+
+::: {.column width="30%"}
+![](images/clipboard-2547811849.png)
+:::
+:::::
+
+::: {.callout-tip .column width="100%"}
+## Golden Handcuffs
+
+-   The invisible prison cell of 3-5 years preventing an employee from leaving the company or forfeit 401k contributions by the employer.
+:::
+
+## Changing Career Path {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+Are you coming into GIS. Why? Are you leaving GIS? Why?
+
+-   Can you afford it? \$52 an hour to \$18
+-   Don't focus on the **Where** (USGS), focus on the **What (**Water reclamation**)**
+    -   What will make you happier then the *Where*
+
+Combine a Sabbatical and Job
+
+-   NPS
+    -   Collect inside information to design entire suite of apps
+    -   Be in nature, hike, and help people as SAR
+-   USFS
+    -   Fire lookout allows time for research
+    -   Learn new skills (html, css, js, bootstrap, r)
+    -   Put field lessons learned to work *(part 4 discussions)*
+
+![](esrilogo.jpg){.absolute top="20%" right="0%" width="15%"}\
+![](NPS_Arrowhead_1.jpg){.absolute top="50%" right="0%" width="15%"}
+
+<!-- ![](esrilogo.jpg){.absolute top="10%" right="0%" width="10%"}   -->
+
+::: footer
+:::
+
+## Changing Career Paths {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+Army -\> GIS --\> Outdoors ---\> GIS
+
+-   Cubical life burn out
+-   Came from an outdoor background
+-   Best suited for a hybrid of field & office
+-   What does this look like?
+    -   Field collection and processing
+        -   Examples
+            -   Ft.Lewis Natural Resource - UAV, FM
+            -   Arlington Cemetery - FM, Survey
+            -   FBI - UAV, LIDAR
+            -   BIE - Professor, FM,Survey
+
+![](army1.png){.absolute top="20%" right="0%" width="22.5%"}
+
+## Work - Life Balance {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+-   Go for a walk if not engaged in MS Teams meeting
+-   Remote / Hybrid work going away –return to office policy
+    -   `Use your Vacation days`
+-   Set work boundaries
+    -   No after work hour phone calls
+    -   Leave computer at the office
+    -   Do not have work apps on your personnal phone (ms teams)
+-   When in doubt, get a dumb phone
+
+![](images/dumbphone.jpg){fig-align="right" width="60%"}
+
+## Break {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+Section 03
+
+Next:
+
+-   Finding and Landing a Job
+
+## Resumes {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+:::::::: columns
+::: {.column width="50%"}
+-   Resume builder
+    -   Federal vs Civilian
+        -   Requires: `location, duty title, hours, salary`
+    -   Generic Resume and Cover Letter
+        -   www.overleaf.com uses LATEX
+        -   tailor the cover letter to the job
+-   Hiring clinchers
+    -   Personal portfolio website
+    -   Showcased project (active website or on github)
+    -   Technical paper or college paper (github)
+:::
+
+:::::: {.column width="40%"}
+![](images/clipboard-1211978771.png){width="1787"}
+
+::::: columns
+::: {.column width="45%"}
+![](images/clipboard-796312416.png)
+:::
+
+::: {.column width="45%"}
+![](coverletter.PNG)
+:::
+:::::
+::::::
+::::::::
+
+## Portfolio {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+-   Quickly setup
+    -   wordpress, weebly
+-   Esri
+    -   Storymap, Experience Builder
+    -   **ArcGIS Assistant**
+        -   https://assistant.esri-ps.com/signin
+    -   Copy your code to a notepad for new enviro
+-   Build your own
+    -   HTML, CSS, Bootstrap, JS, NodeJS, SASS
+-   R: Shiny, Blogdown
+    -   BSlib: bootstrap equivalent
+
+![](arcgis_assistant.png){.absolute top="10%" right="0%" width="40%"}
+
+![](portfolio.png){.absolute top="58%" right="0%" width="40%"}
+
+## Project Ideas - App {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+Think about all your steps for a wholestic system
+
+-   Data collection and cleaning *for* GIS
+
+-   Map infusion (digital, analog)
+
+-   `Display Analytically "the So What"`
+
+-   Esri
+
+    -   Fieldmaps, quickcapture, survey123
+
+    -   Python or R (code, desktop gptool) - Automated?
+
+    -   Dashboard, EB
+
+    -   Symposium poster (no storymaps)
+
+-   Example
+
+    -   \# of bridges, % of roads, \$ of damage (totals and per county)
+
+![](gema1.png){.absolute top="15%" right="0%" width="40%"}
+
+## Project - Technical Writing {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+Build a course to showcase an GIS knowledge, and writing format
+
+-   Esri app
+-   Showcase a piece of your NASA DEVELOP work
+    -   GEE downloading and processing imagery
+    -   How to build a Esri geospatial tool
+
+![](images/course1.PNG){.absolute top="50%" left="0%" style="border:3px solid #32a1ce" width="25%"} ![](images/course3.PNG){.absolute top="55%" left="20%" style="border:3px solid #32a1ce" width="25%"} ![](images/usfs.png){.absolute top="50%" left="50%" style="border:3px solid #32a1ce" width="25%"} ![](images/usfs2.png){.absolute top="55%" left="70%" style="border:3px solid #32a1ce" width="25%"}
+
+## Academia {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+-   Coursework helps *guide* career path
+-   Helpful Coursework
+    -   Scientific/ Research
+        -   Spatial Analytics, Rasters, Coding (Statistical)
+    -   GIS Specialist / Technician
+        -   Database, Coding (Automating), AGOL Apps, ArcPro
+-   Don't jump ahead or take erroneous courses (UAV)(Hydro GIS)
+-   Undergrad(2yr) - PBS(8m) - Grad(3yr)
+    -   I focused PBS on GIS, Geography, Geology
+    -   Would have focused GIS, Python, Stats or Math
+
+![](NCSU_Black.png){.absolute top="70%" right="0%" width="25%"}
+
+## Career Path Advice {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+-   Unknown direction?...tailor coursework to be generic (NCSU does well)
+    -   Specialize once you get to your job. (OJT)
+
+*Before you land your job what do you do?*
+
+-   Internships greatly help
+-   Volunteer while applying to jobs
+    -   URISA, PeaceCorp (federal placement)
+-   Build a GIS portfolio
+-   Pick a passion project to showcase
+
+![](crossroad.jpg){.absolute top="40%" right="-5%" width="45%"}
+
+## Break {background-image="white_contour.jpg" background-opacity=".15" background-size="contain" background-repeat="repeat"}
+
+[Next]{.underline}
+
+-   Section 04 - Future points of discussion
+
+    -   FEMA Reserves
+
+    -   DOD Cartography
+
+-   Section 05 – Future points of discussion
+
+    -   Project Concept..... Start to Finish
+
+    -   Brainstorming, objectives, wireframe concepts, build, test, delivery, user feedback
+
+## Callouts {.r-fit-text .smaller} {visibility="hidden"}
+
+::: callout-tip
+This is a default tip
+:::
+
+::: {.callout-caution title="Warning R-Tips"}
+This is a caution tip
+:::
+
+::: {.callout-important title="Warning R-Tips"}
+This is a important tip
+:::
+
+::: {.callout-warning title="Warning R-Tips"}
+This is a warning tip
+:::
+
+::: {.callout-note title="Warning R-Tips"}
+This is a note tip
+:::
+
+## Aside Note {visibility="hidden"}
+
+Bla bla
+
+-   Green [^1]
+-   Brown
+-   Purple
+
+[^1]: A footnote
+
+::: aside
+Some additional commentary of more peripheral interest.
+:::
