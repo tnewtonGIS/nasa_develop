@@ -46,6 +46,7 @@ To reproduce the presentation, open the project in RStudio and render the Quarto
 ```r
 quarto::quarto_render("revealjsNASA_2026.qmd")
 ```
+Slide shows for 2024/2025 are old versions and do not display (photos/here links not set) but available for download if desired.
 
 ## Project Information
 
